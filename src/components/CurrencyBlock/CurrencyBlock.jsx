@@ -3,12 +3,12 @@ import styles from './CurrencyBlock.module.scss';
 
 const CurrencyBlock = (props) => {
    
-  const { currencyOptions, selectedCurrency } = props;
+  const { currencyOptions, selectedCurrency, onChangeCurrency, amount, onChangeAmount } = props;
 
   return (
     <div className={styles.block}>
-      <input type="number" />
-      <select value={selectedCurrency}>
+      <input type="number" className='input' value={amount} onChange={onChangeAmount} />
+      <select value={selectedCurrency} onChange={onChangeCurrency}>
         {currencyOptions.map(option => (
           <option key={option} value={option}>{option}</option>
         ))}
